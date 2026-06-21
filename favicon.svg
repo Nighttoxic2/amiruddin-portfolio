@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#07111f"/>
-  <path d="M17 43V21h30v7H26v5h17v7H26v3h21v7H17z" fill="#69f0ae"/>
-  <circle cx="48" cy="16" r="5" fill="#60a5fa"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Amiruddin portfolio favicon">
+  <rect width="64" height="64" rx="18" fill="#050505"/>
+  <rect x="12" y="12" width="40" height="40" rx="12" fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.92"/>
+  <path d="M20 39V25h7.4c3.9 0 6.3 2.2 6.3 5.5 0 2.4-1.2 4-3.2 4.8L34 39h-4.1l-2.8-3.9H24.3V39H20zm4.3-7.1h2.6c1.7 0 2.6-.8 2.6-2.3 0-1.4-.9-2.2-2.6-2.2h-2.6v4.5zM37 39V25h4l3 5.4L47 25h4v14h-3.7v-7.3L44 35.7h-1.8l-3.2-5V39H37z" fill="#ffffff"/>
 </svg>

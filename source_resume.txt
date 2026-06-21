@@ -1,0 +1,45 @@
+Muhammad Amiruddin
+amirfao99@gmail.com
+Malaysia
+
+CYBERSECURITY / IT SUPPORT CANDIDATE
+Entry-level cybersecurity and IT support candidate with Security+, RCCE Level 1 & 2, Linux lab experience, Docker projects, and customer-facing troubleshooting work.
+
+EXPERIENCE
+Support Technician — POS Systems | Oct 2025 — Dec 2025
+Installed, configured, maintained and troubleshot POS hardware/software while communicating clearly with non-technical users.
+
+Project Executive — Events & Operations | Oct 2024 — Dec 2024
+Managed projects, vendors, timelines, reports and on-site execution — strong operational discipline transferable to IT support.
+
+Personal Assistant / Event & Content Manager | Mar 2023 — Dec 2023
+Managed logistics, documentation, announcements and executive support with confidentiality and coordination.
+
+CERTIFICATIONS
+• CompTIA Security+
+• RCCE Level 1
+• RCCE Level 2
+• TryHackMe: Pre Security
+• TryHackMe: Intro to Cyber Security
+• TryHackMe: Web Fundamentals
+
+SKILLS
+Linux / Kali
+Remote admin & documentation
+Docker
+Networking basics
+Endpoint security concepts
+POS troubleshooting
+SQL basics
+HTML / CSS
+
+PROJECTS
+Linux Home Lab — Repurposed laptop hardware into a Linux lab for systems practice, service management and troubleshooting.
+Self-hosted Apps — Deployed Docker services including Immich with container networking, persistent storage and service automation.
+Portfolio / Résumé Hosting — Built and hosted a personal site for static publishing, deployment and web fundamentals.
+
+EDUCATION
+Diploma in Business Management — Universiti Selangor (UNISEL)
+
+FOCUS
+Security-first mindset, hands-on lab work, strong troubleshooting, and clear communication with non-technical users.
