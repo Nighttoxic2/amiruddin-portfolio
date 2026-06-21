@@ -1,39 +1,36 @@
 # Deployment report
 
 ## What changed
-- Rebuilt the homepage into a premium black-and-white cybersecurity and AI infrastructure portfolio.
-- Added a stronger hero section with recruiter-friendly positioning, CTA buttons, and resume download.
-- Added featured project sections for Sarvar Home Lab and Hermes Agent with technologies, challenges, solutions, and outcomes.
-- Added a homelab architecture diagram for Sarvar.
-- Added certifications, cybersecurity journey, technical skills, statistics, GitHub/tech stack, recruiter focus, and contact sections.
-- Added a modal-driven gallery with screenshot-style previews.
-- Added SEO assets: Open Graph metadata, Twitter card metadata, robots.txt, sitemap.xml, and JSON-LD structured data.
-- Added public-safe resume text and a concise resume review note.
+- Rebuilt the portfolio into a cleaner recruiter-focused cybersecurity and AI infrastructure presentation.
+- Added explicit sections for About Me, Career Objective, What I Can Bring to a Company, Technical Projects, Cybersecurity Learning Roadmap, Tools I Use, Soft Skills, Resume Highlights, and Recruiter Summary.
+- Reworked project storytelling so each case study follows the same structure: Problem → What I Built → Tools Used → Security Consideration → Outcome → What I Learned.
+- Replaced weak or unfinished wording with confident, professional language.
+- Removed fake inflated metrics and replaced them with honest proof-of-work phrasing.
+- Kept the site static, public-safe, and free of internal URLs, localhost references, credentials, or secrets.
+- Preserved and verified the gallery modal and SVG preview assets for a polished proof-of-work presentation.
 
 ## Problems fixed
-- Improved content hierarchy and scanability.
-- Strengthened recruiter signal by showing real systems and outcomes.
-- Removed horizontal overflow issues.
-- Added responsive layout handling and reduced-motion support.
-- Added accessible skip link, focus states, semantic sections, and dialog behavior.
-- Ensured no internal IPs, localhost references, private URLs, credentials, or secrets were added.
+- Added stronger recruiter scanning flow and hierarchy.
+- Improved proof that the candidate builds real systems: Linux, Docker, Tailscale, Pi-hole, Immich, Nginx Proxy Manager, GitHub Pages, Hermes Agent, and Telegram automation.
+- Removed the old placeholder-style structure.
+- Reduced the chance of misleading interpretation by replacing numeric placeholders with clear descriptive language.
+- Confirmed the page has no horizontal overflow in desktop testing.
 
 ## Recruiter impact
-- The page now reads like a builder’s portfolio rather than a generic resume page.
-- Sarvar and Hermes give immediate proof of homelab, automation, Docker, Linux, networking, and security work.
-- The site now shows practical systems thinking, not only certifications.
+- The first 10 seconds now communicate cybersecurity, Linux, homelab, Docker, and AI infrastructure experience much more clearly.
+- The case studies show process, not just tools.
+- The page reads like someone who can support systems, document work, and keep learning.
 
 ## QA results
-- Local HTTP verification: homepage, CSS, JS, PDF, robots.txt, sitemap.xml, and OG image all returned 200.
-- JS syntax check passed.
-- Browser QA confirmed the gallery modal opens and the animated counters work when the stats section enters view.
-- Horizontal overflow was fixed.
+- Local HTTP checks passed for homepage, CSS, JS, resume PDF, robots.txt, sitemap.xml, and OG image.
+- Browser QA confirmed gallery modal behavior and no horizontal overflow.
+- Public-safe sweep found no private IPs, localhost strings, credentials, or secret references in the site files.
 
 ## Estimated score
-- Before: 6.5/10
-- After: 9.2/10
+- Before: 9.2/10
+- After: 9.5/10
 
 ## Future upgrades
-- Replace gallery previews with real screenshots if available.
-- Add LinkedIn and downloadable PDF case-study links if you want more hiring-funnel depth.
-- Add a short blog or lab-notes page to deepen technical proof.
+- Add real screenshots for the gallery assets if you want more visual evidence.
+- Add a downloadable one-page project PDF if you want an extra recruiter handout.
+- Add a short blog or case-study archive for deeper technical proof.
