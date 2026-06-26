@@ -65,6 +65,24 @@ if (!prefersReducedMotion) {
 
   document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
+  const journeyShell = document.querySelector('.journey-shell');
+  const journeySteps = document.querySelectorAll('.journey-step');
+  const updateJourneyProgress = () => {
+    if (!journeyShell) return;
+    const rect = journeyShell.getBoundingClientRect();
+    const viewportAnchor = window.innerHeight * 0.58;
+    const raw = (viewportAnchor - rect.top) / Math.max(rect.height, 1);
+    const progress = Math.min(1, Math.max(0, raw));
+    journeyShell.style.setProperty('--journey-progress', `${progress * 100}%`);
+    journeySteps.forEach((step) => {
+      const stepRect = step.getBoundingClientRect();
+      step.classList.toggle('is-active', stepRect.top < viewportAnchor && stepRect.bottom > window.innerHeight * 0.18);
+    });
+  };
+  updateJourneyProgress();
+  window.addEventListener('scroll', updateJourneyProgress, { passive: true });
+  window.addEventListener('resize', updateJourneyProgress);
+
   document.querySelectorAll('.magnetic').forEach((el) => {
     el.addEventListener('mousemove', (event) => {
       const rect = el.getBoundingClientRect();
