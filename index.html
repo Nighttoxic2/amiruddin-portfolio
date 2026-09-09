@@ -3,11 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Ronin // Neural Edges</title>
+<title>Muhammad Amiruddin — Cybersecurity, Linux & AI Infrastructure</title>
+<meta name="description" content="Portfolio of Muhammad Amiruddin Bin Mohd Khairulazhar: an aspiring cybersecurity and IT support professional building real Linux, Docker, AI automation and homelab infrastructure.">
+<meta name="author" content="Muhammad Amiruddin Bin Mohd Khairulazhar">
+<meta name="theme-color" content="#C45A18">
+<link rel="canonical" href="https://nighttoxic2.github.io/amiruddin-portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nighttoxic2.github.io/amiruddin-portfolio/">
+<meta property="og:title" content="Muhammad Amiruddin — Cybersecurity, Linux & AI Infrastructure">
+<meta property="og:description" content="Hands-on cybersecurity learner building real Linux, Docker, homelab and AI automation systems.">
+<meta property="og:image" content="https://nighttoxic2.github.io/amiruddin-portfolio/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muhammad Amiruddin — Cybersecurity, Linux & AI Infrastructure">
+<meta name="twitter:description" content="Hands-on cybersecurity learner building real Linux, Docker, homelab and AI automation systems.">
+<meta name="twitter:image" content="https://nighttoxic2.github.io/amiruddin-portfolio/assets/og-image.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/b1314443e183d1cdd77049077c46facc?family=Orbitron-Medium">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Muhammad Amiruddin Bin Mohd Khairulazhar",
+  "url": "https://nighttoxic2.github.io/amiruddin-portfolio/",
+  "email": "mailto:amirfao99@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Sungai Buloh", "addressRegion": "Selangor", "addressCountry": "MY" },
+  "jobTitle": "Aspiring Cybersecurity and IT Support Professional",
+  "knowsAbout": ["Cybersecurity", "Linux", "Docker", "Networking", "AI automation", "Homelab infrastructure", "IT support", "HTML", "CSS", "SQL", "Swift"],
+  "sameAs": ["https://github.com/Nighttoxic2", "https://www.linkedin.com/in/muhammad-amiruddin-597881111/"]
+}
+</script>
 <style>
 :root {
   --cream: #FBDBAF;
@@ -15,258 +42,906 @@
   --label: rgba(251, 219, 175, 0.48);
   --orange: #E07020;
   --card: rgba(10, 8, 7, 0.58);
+  --card-border: rgba(251, 219, 175, 0.08);
+  --line: rgba(251, 219, 175, 0.12);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body {
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: #C45A18;
   color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  min-height: 100vh;
-  min-height: 100dvh;
 }
 
-h1, h2, h3, .heading-font {
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(224, 112, 32, 0.35), transparent 34%),
+    radial-gradient(circle at 76% 16%, rgba(251, 219, 175, 0.12), transparent 32%),
+    linear-gradient(180deg, #C45A18 0%, #A84A14 45%, #8B3D10 100%);
+  z-index: -2;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+button, a { -webkit-tap-highlight-color: transparent; }
+::selection { background: rgba(251, 219, 175, 0.26); color: #fff; }
+
+h1, h2, h3, h4, .heading-font {
   font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  height: 100dvh;
-  overflow: hidden;
-  background: #C45A18;
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--cream);
+  color: #C45A18;
+  transform: translateY(-160%);
+  z-index: 120;
+  font-weight: 600;
+}
+.skip-link:focus { transform: translateY(0); }
+
+/* Header */
+.site-header {
+  position: fixed;
+  z-index: 90;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 28px), 1160px);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 14px 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(10, 8, 7, 0.62);
+  backdrop-filter: blur(22px) saturate(160%);
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.32);
 }
 
-.hero-base-img {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-size: cover;
-  background-position: center center;
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  font-size: 16px;
+  font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
 }
 
-.hero-reveal-img {
-  position: absolute;
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--cream));
+  box-shadow: 0 0 12px rgba(251, 219, 175, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-links a {
+  color: var(--muted);
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover { color: var(--cream); }
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--cream);
+  color: #C45A18;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--cream);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu-backdrop {
+  position: fixed;
   inset: 0;
-  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 95;
+  opacity: 0;
   pointer-events: none;
-  background-size: cover;
-  background-position: center center;
-  -webkit-mask-image: radial-gradient(circle 0px at -999px -999px, #fff, transparent);
-  mask-image: radial-gradient(circle 0px at -999px -999px, #fff, transparent);
+  transition: opacity 0.3s ease;
 }
 
-.hero-ui {
-  position: absolute;
-  inset: 0;
-  z-index: 8;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr auto;
-  padding: 36px 44px 40px;
-  pointer-events: none;
-}
+.menu-backdrop.active { opacity: 1; pointer-events: auto; }
 
-.hero-left {
-  grid-column: 1;
-  grid-row: 1 / -1;
+.mobile-menu {
+  position: fixed;
+  top: 80px;
+  right: 14px;
+  width: min(280px, calc(100% - 28px));
+  background: rgba(10, 8, 7, 0.92);
+  backdrop-filter: blur(22px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  z-index: 96;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 28px;
-  min-width: 0;
+  gap: 12px;
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.hero-copy {
-  max-width: 520px;
-  padding-right: 56px;
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
   pointer-events: auto;
+}
+
+.mobile-menu a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--muted);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.mobile-menu a:hover { background: rgba(251, 219, 175, 0.08); color: var(--cream); }
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 100px 44px 60px;
+  align-items: center;
+}
+
+.hero-copy { max-width: 560px; }
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--label);
+  margin-bottom: 16px;
 }
 
 .hero-copy h1 {
-  font-size: clamp(1.55rem, 3.6vw, 3.15rem);
+  font-size: clamp(1.8rem, 4.5vw, 3.5rem);
   line-height: 1.05;
   text-transform: uppercase;
   color: var(--cream);
-  text-shadow: 0 2px 28px rgba(0,0,0,0.22);
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.22);
+  margin-bottom: 20px;
 }
 
-.hero-copy h1 span {
-  display: block;
-}
-
-.hero-copy p {
-  margin-top: 18px;
-  max-width: 340px;
-  font-size: 13.5px;
-  font-weight: 400;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
-.icon-row {
-  display: flex;
-  gap: 10px;
-  margin-top: 22px;
-}
-
-.icon-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid rgba(251,219,175,0.55);
-  background: transparent;
+.hero-title {
+  font-size: 1.25rem;
+  font-weight: 500;
   color: var(--cream);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  margin-bottom: 16px;
+  line-height: 1.4;
 }
 
-.icon-btn:hover {
-  background: rgba(251,219,175,0.1);
+.hero-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease, border-color 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--cream);
+  color: #C45A18;
   border-color: var(--cream);
 }
 
-.icon-btn svg {
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
-  stroke-width: 1.2;
-  fill: none;
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.product-card {
-  pointer-events: auto;
-  width: min(320px, 100%);
-  display: grid;
-  grid-template-columns: 86px 1fr;
-  grid-template-rows: auto auto;
-  gap: 10px 14px;
-  padding: 12px;
-  border-radius: 18px;
-  background: var(--card);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(251,219,175,0.08);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.28);
-}
-
-.product-thumb {
-  grid-column: 1;
-  grid-row: 1 / -1;
-  width: 86px;
-  min-height: 86px;
-  border-radius: 12px;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  aria-hidden: true;
-}
-
-.product-body {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.product-body h2 {
-  font-size: 11px;
-  line-height: 1.25;
-  text-transform: uppercase;
-  color: var(--cream);
-}
-
-.product-body p {
-  margin-top: 6px;
-  font-size: 11.5px;
-  line-height: 1.45;
-  color: var(--muted);
-}
-
-.cart-btn {
-  grid-column: 2;
-  grid-row: 2;
-  justify-self: start;
-  align-self: end;
-  border: 1px solid var(--cream);
-  border-radius: 999px;
-  padding: 7px 16px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--cream);
+.btn-secondary {
   background: transparent;
-  cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  color: var(--cream);
+  border-color: var(--line);
 }
 
-.cart-btn:hover {
-  transform: translateY(-1px);
+.btn-secondary:hover {
+  background: rgba(251, 219, 175, 0.08);
+  border-color: var(--cream);
 }
 
-.hero-page {
-  position: absolute;
-  top: 36px;
-  right: 44px;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  color: rgba(251,219,175,0.78);
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border-color: transparent;
 }
 
-.specs {
-  grid-column: 2;
-  grid-row: 3;
-  justify-self: end;
-  pointer-events: auto;
-  width: min(340px, 100%);
-}
+.btn-ghost:hover { color: var(--cream); }
 
-.specs h3 {
-  font-size: 11px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  letter-spacing: 0.12em;
-}
-
-.spec-row {
+.hero-stats {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  padding: 7px 0;
-  border-top: 1px solid rgba(251,219,175,0.12);
+  gap: 24px;
+  margin-top: 36px;
+  list-style: none;
+  flex-wrap: wrap;
 }
 
-.spec-label {
+.hero-stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-stats li span:first-child {
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--label);
 }
 
-.spec-value {
-  font-size: 12.5px;
+.hero-stats li span:last-child {
+  font-size: 13px;
   color: var(--cream);
-  text-align: right;
-  white-space: nowrap;
+  font-weight: 500;
 }
+
+.hero-portrait {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portrait-frame {
+  position: relative;
+  width: min(380px, 100%);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 26px 100px rgba(0, 0, 0, 0.4);
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.portrait-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(10, 8, 7, 0.72);
+  backdrop-filter: blur(12px);
+  font-size: 12px;
+  color: var(--cream);
+  text-align: center;
+}
+
+/* Sections */
+.section {
+  padding: 80px 44px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.section-muted {
+  background: rgba(10, 8, 7, 0.28);
+  max-width: 100%;
+}
+
+.section-muted .section-heading,
+.section-muted > div {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading {
+  margin-bottom: 40px;
+}
+
+.section-heading.centered {
+  text-align: center;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-top: 12px;
+}
+
+/* Story / Roadmap */
+.story-intro {
+  max-width: 680px;
+  margin-bottom: 48px;
+}
+
+.story-intro p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-top: 16px;
+}
+
+.journey-shell {
+  position: relative;
+  padding-left: 32px;
+}
+
+.journey-progress {
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+}
+
+.journey-progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--orange), var(--cream));
+}
+
+.journey-step {
+  position: relative;
+  margin-bottom: 32px;
+  padding: 20px 24px;
+  border-radius: 18px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+.journey-step::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 24px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 12px rgba(224, 112, 32, 0.5);
+}
+
+.journey-step-final::before { background: var(--cream); }
+
+.journey-step time {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--label);
+}
+
+.journey-step h3 {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: var(--cream);
+}
+
+.journey-step p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Projects */
+.case-study {
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  margin-bottom: 32px;
+}
+
+.case-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.case-study h3 {
+  font-size: 22px;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.case-summary {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.case-grid h4 {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--label);
+  margin-bottom: 6px;
+}
+
+.case-grid p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-row span {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(251, 219, 175, 0.06);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.project-card {
+  padding: 24px;
+  border-radius: 18px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.project-category {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.project-top strong {
+  font-size: 18px;
+  color: var(--label);
+  font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+}
+
+.project-card h3 {
+  font-size: 18px;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.project-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-card ul li {
+  font-size: 13px;
+  color: var(--muted);
+  padding-left: 16px;
+  position: relative;
+}
+
+.project-card ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+}
+
+.future-note {
+  padding: 24px;
+  border-radius: 18px;
+  background: rgba(251, 219, 175, 0.04);
+  border: 1px solid var(--line);
+}
+
+.future-note h3 {
+  font-size: 16px;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.future-note p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Skills */
+.skills-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.skill-column {
+  padding: 24px;
+  border-radius: 18px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+.skill-column h3 {
+  font-size: 14px;
+  color: var(--cream);
+  margin-bottom: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tags span {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(251, 219, 175, 0.06);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Experience */
+.recruiter-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  padding: 32px;
+  border-radius: 24px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+.recruiter-card h2 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-top: 12px;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.experience-item {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.experience-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--label);
+}
+
+.experience-meta time {
+  font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.experience-item h3 {
+  font-size: 16px;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+
+.experience-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.recruiter-points {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.recruiter-points p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(251, 219, 175, 0.04);
+  border: 1px solid var(--line);
+}
+
+.recruiter-points strong {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+/* Timeline */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.timeline-item {
+  padding: 24px;
+  border-radius: 18px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+.timeline-item time {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-family: 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+}
+
+.timeline-item h3 {
+  font-size: 16px;
+  color: var(--cream);
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.timeline-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Certifications */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.cert-card {
+  padding: 24px;
+  border-radius: 18px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+.cert-card span {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.cert-card h3 {
+  font-size: 16px;
+  color: var(--cream);
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.cert-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Contact */
+.contact-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  padding: 32px;
+  border-radius: 24px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  align-items: center;
+}
+
+.contact-card img {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+}
+
+.contact-card h2 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-top: 12px;
+  margin-bottom: 14px;
+}
+
+.contact-card > div > p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.contact-note {
+  font-size: 12px;
+  color: var(--label);
+}
+
+/* Footer */
+.site-footer {
+  padding: 28px 44px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--label);
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-footer a { color: var(--muted); transition: color 0.25s ease; }
+.site-footer a:hover { color: var(--cream); }
 
 /* Animations */
-@keyframes heroImageIn {
-  from { opacity: 0; transform: scale(1.18); }
-  to { opacity: 1; transform: scale(1); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); filter: blur(8px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 
-.hero-image-animate {
-  animation: heroImageIn 1.2s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
-  animation-delay: 0.15s;
+.reveal {
   opacity: 0;
+  transform: translateY(20px);
+  filter: blur(8px);
+}
+
+.reveal.is-visible {
+  animation: fadeUp 0.7s ease forwards;
 }
 
 @keyframes wordPullUp {
@@ -280,33 +955,14 @@ h1, h2, h3, .heading-font {
   transform: translateY(20px);
 }
 
-.pull-word:not(:last-child) {
-  margin-right: 0.3em;
-}
+.pull-word:not(:last-child) { margin-right: 0.3em; }
 
 .words-visible .pull-word {
   animation: wordPullUp 0.55s ease forwards;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(14px); filter: blur(8px); }
-  to { opacity: 1; transform: translateY(0); filter: blur(0); }
-}
-
-.fade-up-reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  filter: blur(8px);
-}
-
-.fade-up-reveal.is-visible {
-  animation: fadeUp 0.7s ease forwards;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .hero-image-animate,
-  .pull-word,
-  .fade-up-reveal {
+  .reveal, .pull-word {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -316,224 +972,399 @@ h1, h2, h3, .heading-font {
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .hero-ui { padding: 32px 28px 36px; }
-  .hero-page { top: 32px; right: 28px; }
-  .specs { width: min(300px, 100%); }
-}
-
-@media (max-width: 900px) {
-  .hero-ui { padding: 28px 22px 28px; }
-  .hero-page { top: 28px; right: 22px; }
-  .hero-copy h1 { font-size: clamp(1.35rem, 7.2vw, 2.4rem); }
-  .hero-base-img, .hero-reveal-img { background-position: 40% center; }
-  .specs { width: min(280px, 100%); }
+  .hero { padding: 100px 28px 50px; }
+  .section { padding: 60px 28px; }
+  .recruiter-card { grid-template-columns: 1fr; gap: 24px; }
+  .contact-card { grid-template-columns: 1fr; gap: 24px; }
+  .contact-card img { max-width: 240px; }
 }
 
 @media (max-width: 768px) {
-  .hero-ui {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(28px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
-  }
-  .hero-left { grid-row: 1 / 3; gap: 24px; }
-  .hero-page {
-    top: max(24px, env(safe-area-inset-top));
-    right: max(20px, env(safe-area-inset-right));
-  }
-  .specs {
-    grid-row: 3;
-    justify-self: stretch;
-    width: 100%;
-    margin-top: 8px;
-  }
-  .hero-base-img, .hero-reveal-img { background-position: 40% center; }
-}
-
-@media (max-width: 720px) {
-  .hero {
-    height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
-  }
-  .hero-ui {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    min-height: 100dvh;
-    justify-content: flex-start;
-    gap: 28px;
-    padding: max(22px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
-  }
-  .hero-left {
-    grid-column: unset;
-    grid-row: unset;
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .hero-copy { max-width: 100%; padding-right: 48px; }
-  .hero-copy p { font-size: 12.5px; max-width: 100%; }
-  .product-card { width: 100%; }
-  .specs { width: 100%; margin-top: auto; padding-top: 4px; }
-  .spec-value { white-space: normal; }
-  .hero-base-img, .hero-reveal-img { background-position: 40% center; }
+  .nav-links { display: none; }
+  .menu-toggle { display: inline-flex; }
+  .hero { grid-template-columns: 1fr; padding: 100px 20px 40px; gap: 32px; }
+  .hero-copy h1 { font-size: clamp(1.5rem, 7vw, 2.4rem); }
+  .section { padding: 50px 20px; }
+  .section-muted { padding: 50px 20px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .skills-board { grid-template-columns: 1fr; }
+  .timeline { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .case-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 16px; }
+  .site-footer { padding: 20px; flex-direction: column; }
 }
 
 @media (max-width: 480px) {
-  .hero-ui {
-    gap: 22px;
-    padding: max(18px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
-  }
-  .hero-page { font-size: 12px; }
-  .hero-copy h1 { font-size: clamp(1.1rem, 8.5vw, 1.65rem); }
-  .hero-copy p { font-size: 12px; margin-top: 14px; }
-  .icon-row { margin-top: 16px; gap: 8px; }
-  .icon-btn { width: 34px; height: 34px; }
-  .hero-left { gap: 22px; }
-  .product-card {
-    grid-template-columns: 72px 1fr;
-    gap: 8px 12px;
-    padding: 10px;
-    border-radius: 14px;
-  }
-  .product-thumb { width: 72px; min-height: 72px; border-radius: 10px; }
-  .product-body h2 { font-size: 10px; }
-  .product-body p { font-size: 11px; }
-  .cart-btn { padding: 6px 14px; font-size: 11px; }
-  .specs h3 { font-size: 10px; margin-bottom: 10px; }
-  .spec-row { padding: 6px 0; gap: 10px; }
-  .spec-label, .spec-value { font-size: 11px; }
-}
-
-@media (max-width: 360px) {
-  .hero-copy h1 { font-size: 1rem; }
-  .product-card { grid-template-columns: 64px 1fr; }
-  .product-thumb { width: 64px; min-height: 64px; }
+  .hero-copy h1 { font-size: clamp(1.3rem, 8vw, 1.8rem); }
+  .hero-title { font-size: 1rem; }
+  .hero-text { font-size: 13px; }
+  .btn { padding: 10px 18px; font-size: 13px; }
+  .journey-shell { padding-left: 24px; }
+  .journey-step { padding: 16px 18px; }
+  .journey-step::before { left: -20px; width: 10px; height: 10px; }
+  .case-study { padding: 20px; border-radius: 18px; }
+  .project-card { padding: 18px; }
+  .skill-column { padding: 18px; }
+  .recruiter-card { padding: 20px; }
+  .contact-card { padding: 20px; }
+  .timeline-item { padding: 18px; }
+  .cert-card { padding: 18px; }
 }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<main class="hero">
-  <div class="hero-base-img hero-image-animate" style="background-image: url('https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260831_115955_2a9adb39-5e9b-4ced-96e2-6900eabe3de9.png&w=1920&q=85');"></div>
-  <div class="hero-reveal-img" id="reveal-img" style="background-image: url('https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260831_123709_183f0065-efb2-4bb2-a849-13aaa5af2f3f.png&w=1920&q=85');"></div>
+<header class="site-header" data-glass>
+  <a class="brand" href="#top" aria-label="Go to homepage">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span>Amiruddin</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary navigation">
+    <a href="#story">Story</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+  <a class="header-cta" href="assets/Muhammad-Amiruddin-Resume-Public.pdf" download>Resume</a>
+</header>
 
-  <div class="hero-ui">
-    <div class="hero-left">
-      <div class="hero-copy">
-        <h1 class="words-pull-up">
-          <span>RONIN-X //</span>
-          <span>SHADOW</span>
-          <span>NIGHTFALL</span>
-        </h1>
-        <p class="fade-up-reveal" data-delay="0.5">Cultivated with high-res optics and a zero-gravity frame for those who don't just watch the future—they wield it. Shift your reality.</p>
-        <div class="icon-row fade-up-reveal" data-delay="0.65">
-          <button class="icon-btn" aria-label="Main core">
-            <svg viewBox="0 0 16 16"><path d="M8 1.4L13.8 4.7V11.3L8 14.6L2.2 11.3V4.7L8 1.4Z"/><circle cx="8" cy="8" r="1.35" fill="currentColor"/></svg>
-          </button>
-          <button class="icon-btn" aria-label="Vision">
-            <svg viewBox="0 0 16 16"><path d="M2 5.2V2h3.2" stroke-linecap="round"/><path d="M14 5.2V2h-3.2" stroke-linecap="round"/><path d="M2 10.8V14h3.2" stroke-linecap="round"/><path d="M14 10.8V14h-3.2" stroke-linecap="round"/><rect x="5.2" y="5.2" width="5.6" height="5.6"/></svg>
-          </button>
-          <button class="icon-btn" aria-label="Force">
-            <svg viewBox="0 0 16 16"><path d="M9.2 1.6L4 9.1h3.5L6.8 14.4 12 6.9H8.5L9.2 1.6Z" stroke-linejoin="round"/></svg>
-          </button>
-        </div>
+<div id="menu-backdrop" class="menu-backdrop" aria-hidden="true"></div>
+<div id="mobile-menu" class="mobile-menu" hidden>
+  <a href="#story">Story</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#contact">Contact</a>
+  <a class="header-cta" href="assets/Muhammad-Amiruddin-Resume-Public.pdf" download>Resume</a>
+</div>
+
+<main id="main">
+  <section id="top" class="hero">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">Cybersecurity · AI · Linux · Docker</p>
+      <h1 class="words-pull-up">Muhammad Amiruddin Bin Mohd Khairulazhar</h1>
+      <p class="hero-title">I build secure, automated systems because theory doesn't replace real infrastructure.</p>
+      <p class="hero-text">From POS support to home lab operator, I've spent the last few years putting cybersecurity, Docker and AI automation into practice on Sarvar — my repurposed-laptop home server. I learn by building things I can break, fix, document and defend.</p>
+      <div class="hero-actions" aria-label="Primary actions">
+        <a class="btn btn-primary" href="#projects">View case studies</a>
+        <a class="btn btn-secondary" href="assets/Muhammad-Amiruddin-Resume-Public.pdf" download>Download resume</a>
+        <a class="btn btn-ghost" href="#contact">Contact me</a>
       </div>
+      <ul class="hero-stats" aria-label="Portfolio highlights">
+        <li><span>Security+</span><span>Certified</span></li>
+        <li><span>RCCE</span><span>Level 1 &amp; 2</span></li>
+        <li><span>Linux</span><span>Homelab</span></li>
+        <li><span>Docker</span><span>Hands-on</span></li>
+      </ul>
+    </div>
+    <div class="hero-portrait reveal" aria-label="Portrait of Muhammad Amiruddin">
+      <div class="portrait-frame">
+        <picture>
+          <source srcset="assets/portrait-corporate.webp" type="image/webp">
+          <img src="assets/portrait-corporate.jpg" alt="Corporate portrait of Muhammad Amiruddin" width="900" height="1120">
+        </picture>
+        <div class="portrait-badge">Available for cybersecurity / IT support roles</div>
+      </div>
+    </div>
+  </section>
 
-      <article class="product-card">
-        <div class="product-thumb" style="background-image: url('https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260831_121937_3f02b5a0-5b86-43d9-b30e-03c5e46632e7.png&w=1920&q=85');" aria-hidden="true"></div>
-        <div class="product-body">
-          <h2 class="words-pull-up">CR-01: CYBER FRAME</h2>
-          <p class="fade-up-reveal" data-delay="1.05">Precision-grade optics and a light frame for comfort and clarity.</p>
-        </div>
-        <button class="cart-btn fade-up-reveal" data-delay="1.15">Reserve Now</button>
+  <section id="story" class="section section-muted story-roadmap">
+    <div class="story-intro reveal">
+      <p class="eyebrow">Story / Roadmap</p>
+      <h2>From operations to cybersecurity: a practical journey built one system at a time.</h2>
+      <p>I did not enter technology by memorizing buzzwords. I moved toward it through support work, curiosity, broken systems, logs, Linux services, and the need to understand how real infrastructure behaves when people depend on it.</p>
+    </div>
+    <div class="journey-shell" aria-label="Personal career and learning journey">
+      <div class="journey-progress" aria-hidden="true"><span></span></div>
+      <article class="journey-step reveal">
+        <time datetime="2019">Foundation</time>
+        <h3>Business management shaped how I think about people and operations.</h3>
+        <p>My UNISEL business management background gave me a foundation in communication, organization, and responsibility. It taught me that technical work still has to serve real users, timelines, and outcomes.</p>
+      </article>
+      <article class="journey-step reveal">
+        <time datetime="2023">Operations to support</time>
+        <h3>I moved closer to technology through practical problem solving.</h3>
+        <p>Event operations, executive support, and POS technician work trained me to stay calm under pressure, document clearly, troubleshoot systematically, and keep business workflows moving when something breaks.</p>
+      </article>
+      <article class="journey-step reveal">
+        <time datetime="2025">Security direction</time>
+        <h3>Cybersecurity became the field that connected my curiosity with discipline.</h3>
+        <p>CompTIA Security+, RCCE Level 1 &amp; 2, and TryHackMe learning gave structure to what I was already drawn to: access, exposure, networks, risk, and the responsibility of protecting systems.</p>
+      </article>
+      <article class="journey-step reveal">
+        <time datetime="2026">Sarvar homelab</time>
+        <h3>I built Sarvar so my learning would happen on real infrastructure.</h3>
+        <p>Sarvar is my Linux-based homelab for Docker services, DNS filtering, reverse proxy thinking, remote access, media hosting, and public-safe documentation. It is where I learn how services run, fail, recover, and stay maintainable.</p>
+      </article>
+      <article class="journey-step reveal">
+        <time datetime="2026">Now</time>
+        <h3>Hermes Agent turned automation into a working support system.</h3>
+        <p>Through Hermes, I practice AI-assisted workflows, profile separation, messaging channels, memory, scheduling, and safe tool access. It reflects the kind of systems thinking I want to bring into IT support, SOC, and cybersecurity teams.</p>
+      </article>
+      <article class="journey-step reveal journey-step-final">
+        <time datetime="2026">Learning next</time>
+        <h3>I am still early-career, but I already build, test, document, and improve.</h3>
+        <p>My current roadmap continues through TryHackMe, Mimo, Linux, Docker, personal labs, and recruiter-ready documentation. The reason to interview me is simple: I learn by building real things and I care about making them reliable.</p>
       </article>
     </div>
+  </section>
 
-    <div class="hero-page fade-up-reveal" data-delay="0.75">1/26</div>
+  <section id="projects" class="section">
+    <div class="section-heading centered reveal">
+      <p class="eyebrow">Selected case studies</p>
+      <h2>Real projects that show initiative, learning and practical execution.</h2>
+    </div>
+    <div class="case-study featured reveal">
+      <div class="case-label">Flagship infrastructure project</div>
+      <h3>Sarvar Home Server</h3>
+      <p class="case-summary">A repurposed laptop transformed into a Linux-based home server for secure learning, Docker services, DNS filtering, media hosting and AI automation workflows.</p>
+      <div class="case-grid">
+        <div><h4>Problem</h4><p>I needed a real environment to learn Linux, networking and service ownership without relying on disposable tutorials.</p></div>
+        <div><h4>Solution</h4><p>Built Sarvar as a personal infrastructure platform with Docker services, remote management and public-safe documentation.</p></div>
+        <div><h4>Architecture</h4><p>Linux host, Docker containers, reverse proxy patterns, DNS filtering, photo/media services, monitoring habits and remote access workflow.</p></div>
+        <div><h4>Security considerations</h4><p>Kept private services private where possible, avoided publishing internal addresses, separated management surfaces and used secure remote access thinking.</p></div>
+      </div>
+      <div class="tech-row" aria-label="Sarvar technologies"><span>Linux</span><span>Docker</span><span>SSH</span><span>Pi-hole</span><span>Immich</span><span>Nginx Proxy Manager</span><span>Tailscale</span></div>
+    </div>
+    <div class="project-grid">
+      <article class="project-card reveal">
+        <div class="project-top"><span class="project-category">AI automation</span><strong>01</strong></div>
+        <h3>Hermes Agent</h3>
+        <p>Configured and operated an AI assistant workflow across profiles and messaging channels to support personal automation, family support and infrastructure tasks.</p>
+        <ul><li>Profile isolation and controlled tool access</li><li>Telegram and iMessage operational workflows</li><li>Memory, scheduling and assistant automation</li></ul>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-top"><span class="project-category">News system</span><strong>02</strong></div>
+        <h3>News Sarvar</h3>
+        <p>A private newsroom-style automation stack for collecting, queueing and managing news items through services and bot workflows.</p>
+        <ul><li>Frontend, CMS/API, automation and database services</li><li>Docker-based service ownership</li><li>Queue and command workflow thinking</li></ul>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-top"><span class="project-category">Containers</span><strong>03</strong></div>
+        <h3>Docker Infrastructure</h3>
+        <p>Hands-on deployment of self-hosted services with volumes, container networking, restarts, updates and operational checks.</p>
+        <ul><li>Persistent storage awareness</li><li>Service restart and update habits</li><li>Container health and troubleshooting</li></ul>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-top"><span class="project-category">DNS security</span><strong>04</strong></div>
+        <h3>Pi-hole DNS Filtering</h3>
+        <p>Configured DNS filtering and observed LAN client behavior to understand privacy, ad blocking, resolver choices and failover tradeoffs.</p>
+        <ul><li>DNS filtering concepts</li><li>Client visibility and troubleshooting</li><li>Availability versus strict enforcement decisions</li></ul>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-top"><span class="project-category">Media service</span><strong>05</strong></div>
+        <h3>Immich Photo Hosting</h3>
+        <p>Deployed a self-hosted media service to learn containerized application stacks, storage, databases, cache services and maintenance.</p>
+        <ul><li>Multi-container application stack</li><li>Storage and backup awareness</li><li>Private media service operation</li></ul>
+      </article>
+      <article class="project-card reveal">
+        <div class="project-top"><span class="project-category">Static web</span><strong>06</strong></div>
+        <h3>Portfolio on GitHub Pages</h3>
+        <p>Built a public, static, recruiter-focused website with SEO metadata, structured data, accessibility checks and public-safety scanning.</p>
+        <ul><li>HTML, CSS and JavaScript</li><li>GitHub Pages deployment</li><li>SEO and static-site hygiene</li></ul>
+      </article>
+    </div>
+    <div class="future-note reveal">
+      <h3>Honest project boundary</h3>
+      <p>Some tools I am interested in, such as Nextcloud and deeper cloud-style backup workflows, are kept as learning targets until I can present them with truthful implementation evidence.</p>
+    </div>
+  </section>
 
-    <div class="specs">
-      <h3 class="words-pull-up">Operative Specs</h3>
-      <div class="spec-row fade-up-reveal" data-delay="1.2">
-        <span class="spec-label">Vision</span>
-        <span class="spec-value">Dual 8K Pulse-OLED</span>
+  <section id="skills" class="section section-muted">
+    <div class="section-heading reveal">
+      <p class="eyebrow">Technical stack</p>
+      <h2>Grouped by real confidence, not keyword stuffing.</h2>
+    </div>
+    <div class="skills-board">
+      <article class="skill-column reveal"><h3>Cybersecurity</h3><div class="skill-tags"><span>CompTIA Security+</span><span>RCCE Level 1 &amp; 2</span><span>TryHackMe labs</span><span>Security awareness</span><span>Access control thinking</span></div></article>
+      <article class="skill-column reveal"><h3>Infrastructure</h3><div class="skill-tags"><span>Linux</span><span>Kali Linux</span><span>Docker</span><span>Nginx Proxy Manager</span><span>SSH</span><span>GitHub Pages</span></div></article>
+      <article class="skill-column reveal"><h3>Networking</h3><div class="skill-tags"><span>Basic networking</span><span>DNS</span><span>Pi-hole</span><span>Tailscale</span><span>Port forwarding</span><span>Remote access</span></div></article>
+      <article class="skill-column reveal"><h3>Programming</h3><div class="skill-tags"><span>HTML</span><span>CSS</span><span>SQL</span><span>Swift</span><span>YAML</span><span>Bash scripting</span></div></article>
+      <article class="skill-column reveal"><h3>Automation</h3><div class="skill-tags"><span>AI automation</span><span>Service orchestration</span><span>Queue workflows</span><span>Monitoring habits</span><span>Documentation</span></div></article>
+      <article class="skill-column reveal"><h3>Soft Skills</h3><div class="skill-tags"><span>Communication</span><span>Problem-solving</span><span>Organization</span><span>Time management</span><span>Customer service</span><span>Discipline</span></div></article>
+    </div>
+  </section>
+
+  <section id="experience" class="section recruiter-section">
+    <div class="recruiter-card reveal">
+      <div>
+        <p class="eyebrow">Experience</p>
+        <h2>Operations, projects and support — with a cybersecurity mindset.</h2>
       </div>
-      <div class="spec-row fade-up-reveal" data-delay="1.3">
-        <span class="spec-label">Nerve</span>
-        <span class="spec-value">R1 - Ronin Engines</span>
-      </div>
-      <div class="spec-row fade-up-reveal" data-delay="1.4">
-        <span class="spec-label">Reflex</span>
-        <span class="spec-value">144Hz Low-Lag Ops</span>
-      </div>
-      <div class="spec-row fade-up-reveal" data-delay="1.5">
-        <span class="spec-label">Armor</span>
-        <span class="spec-value">Lightweight Shadow Shell</span>
+      <div class="experience-list">
+        <div class="experience-item reveal">
+          <div class="experience-meta"><time datetime="2025-10">2025</time><span>T Tech Solution Borneo Sdn Bhd</span></div>
+          <h3>Support Technician — POS Systems</h3>
+          <p>Installed, configured, maintained and troubleshot POS hardware and software, minimizing downtime and keeping business operations running.</p>
+        </div>
+        <div class="experience-item reveal">
+          <div class="experience-meta"><time datetime="2024-10">2024</time><span>Cogue Studio Sdn Bhd</span></div>
+          <h3>Project Executive — Events &amp; Operations</h3>
+          <p>Managed end-to-end event execution including vendor coordination, budgeting, on-site operations and stakeholder reporting. Resigned to pursue further studies.</p>
+        </div>
+        <div class="experience-item reveal">
+          <div class="experience-meta"><time datetime="2023-03">2023</time><span>FLP Academy</span></div>
+          <h3>Personal Assistant to Director cum Event &amp; Content Manager</h3>
+          <p>Planned masterclass tours and company trips, managed digital content, executive schedules, travel logistics and confidential support work.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="recruiter-card reveal">
+      <div>
+        <p class="eyebrow">Why interview me?</p>
+        <h2>I am early-career, but I already build and maintain real things.</h2>
+      </div>
+      <div class="recruiter-points">
+        <p><strong>Continuous learner:</strong> Security+, RCCE and TryHackMe are paired with practical lab work, not just certificates.</p>
+        <p><strong>Self-driven:</strong> I built Sarvar because I wanted real infrastructure to learn from, not because a course required it.</p>
+        <p><strong>Support-ready:</strong> POS support experience taught clear communication with non-technical users and fast incident recovery.</p>
+        <p><strong>Security-aware:</strong> I avoid exposing private details, think about access boundaries and follow least-exposure habits.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline" class="section">
+    <div class="section-heading centered reveal">
+      <p class="eyebrow">Timeline</p>
+      <h2>A learning journey from operations into cybersecurity and infrastructure.</h2>
+    </div>
+    <div class="timeline" aria-label="Career and learning timeline">
+      <article class="timeline-item reveal">
+        <time datetime="2019">Education</time>
+        <h3>Diploma in Business Management — UNISEL</h3>
+        <p>Built a foundation in communication, operations, organisation and business discipline.</p>
+      </article>
+      <article class="timeline-item reveal">
+        <time datetime="2023-03">2023</time>
+        <h3>Personal Assistant / Event &amp; Content Manager — FLP Academy</h3>
+        <p>Managed logistics, content, documentation, schedules and confidential support work.</p>
+      </article>
+      <article class="timeline-item reveal">
+        <time datetime="2024-10">2024</time>
+        <h3>Project Executive — Events &amp; Operations</h3>
+        <p>Coordinated vendors, timelines, on-site work, reporting and project delivery.</p>
+      </article>
+      <article class="timeline-item reveal">
+        <time datetime="2025-10">2025</time>
+        <h3>Support Technician — POS Systems</h3>
+        <p>Installed, configured, maintained and troubleshot POS hardware/software for users.</p>
+      </article>
+      <article class="timeline-item reveal">
+        <time datetime="2025">Certifications</time>
+        <h3>CompTIA Security+ and RCCE Level 1 &amp; 2</h3>
+        <p>Established entry-level cybersecurity fundamentals and a stronger security vocabulary.</p>
+      </article>
+      <article class="timeline-item reveal">
+        <time datetime="2026">Now</time>
+        <h3>Sarvar, Hermes and cybersecurity learning</h3>
+        <p>Building and documenting hands-on systems to prepare for IT support, SOC and cybersecurity roles.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="certifications" class="section certs-section">
+    <div class="section-heading reveal">
+      <p class="eyebrow">Credentials</p>
+      <h2>Certifications and learning signals.</h2>
+    </div>
+    <div class="cert-grid">
+      <article class="cert-card reveal"><span>Certified</span><h3>CompTIA Security+</h3><p>Security fundamentals, risk, architecture, operations and security concepts.</p></article>
+      <article class="cert-card reveal"><span>Certified</span><h3>RCCE Level 1 &amp; 2</h3><p>Cybersecurity learning through Rocheston Certified Cybersecurity Engineer levels.</p></article>
+      <article class="cert-card reveal"><span>Labs</span><h3>TryHackMe Learning</h3><p>Intro to Cyber Security, Pre Security and Web Fundamentals.</p></article>
+      <article class="cert-card reveal"><span>Foundations</span><h3>Mimo Coding</h3><p>HTML, CSS, SQL and Swift fundamentals.</p></article>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="contact-card reveal">
+      <picture>
+        <source srcset="assets/portrait-corporate.webp" type="image/webp">
+        <img src="assets/portrait-corporate.jpg" alt="Corporate portrait of Muhammad Amiruddin" width="900" height="1120" loading="lazy">
+      </picture>
+      <div>
+        <p class="eyebrow">Open to entry-level cybersecurity and IT support opportunities</p>
+        <h2>Let's talk about secure systems, support and hands-on learning.</h2>
+        <p>I am based in Sungai Buloh, Selangor and looking for opportunities where I can support systems, learn from experienced teams and keep building practical security skills.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:amirfao99@gmail.com">Email me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/muhammad-amiruddin-597881111/" rel="noopener">LinkedIn</a>
+          <a class="btn btn-secondary" href="https://github.com/Nighttoxic2" rel="noopener">GitHub</a>
+          <a class="btn btn-secondary" href="assets/Muhammad-Amiruddin-Resume-Public.pdf" download>Resume</a>
+        </div>
+        <p class="contact-note">Public profile links are included for recruiter verification and follow-up.</p>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> Muhammad Amiruddin Bin Mohd Khairulazhar</p>
+  <a href="#top">Back to top</a>
+</footer>
 
 <script>
 (function() {
   'use strict';
 
-  // 1. Spotlight reveal
-  var revealImg = document.getElementById('reveal-img');
-  if (revealImg) {
-    function updateMask(x, y) {
-      var rect = revealImg.getBoundingClientRect();
-      var localX = x - rect.left;
-      var localY = y - rect.top;
-      var width = window.innerWidth;
-      var radius = width < 480 ? 120 : width < 720 ? 160 : 260;
-      var mask = 'radial-gradient(circle ' + radius + 'px at ' + localX + 'px ' + localY + 'px, #fff 0%, #fff 40%, rgba(255,255,255,0.75) 60%, rgba(255,255,255,0.4) 75%, rgba(255,255,255,0.12) 88%, transparent 100%)';
-      revealImg.style.webkitMaskImage = mask;
-      revealImg.style.maskImage = mask;
-    }
+  // Year
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    window.addEventListener('mousemove', function(e) {
-      updateMask(e.clientX, e.clientY);
+  // Mobile menu
+  var menuToggle = document.querySelector('.menu-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var menuBackdrop = document.getElementById('menu-backdrop');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', function() {
+      var isOpen = mobileMenu.classList.contains('active');
+      if (isOpen) {
+        mobileMenu.classList.remove('active');
+        menuBackdrop.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('hidden', '');
+      } else {
+        mobileMenu.classList.add('active');
+        menuBackdrop.classList.add('active');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        mobileMenu.removeAttribute('hidden');
+      }
     });
 
-    window.addEventListener('touchmove', function(e) {
-      if (e.touches && e.touches.length > 0) {
-        updateMask(e.touches[0].clientX, e.touches[0].clientY);
-      }
-    }, { passive: true });
+    menuBackdrop.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+      menuBackdrop.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('hidden', '');
+    });
+
+    var menuLinks = mobileMenu.querySelectorAll('a');
+    for (var i = 0; i < menuLinks.length; i++) {
+      menuLinks[i].addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+        menuBackdrop.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('hidden', '');
+      });
+    }
   }
 
-  // 2. Word split
+  // Word split for .words-pull-up
   var wordGroups = document.querySelectorAll('.words-pull-up');
   for (var i = 0; i < wordGroups.length; i++) {
     var el = wordGroups[i];
     if (el.dataset.split) continue;
     el.dataset.split = 'true';
 
-    // Special case: H1 with direct child spans
-    if (el.tagName === 'H1') {
-      var lines = el.querySelectorAll('span');
-      if (lines.length > 0) {
-        var wordIndex = 0;
-        for (var l = 0; l < lines.length; l++) {
-          var line = lines[l];
-          var text = line.textContent;
-          var words = text.split(/\s+/);
-          var html = '';
-          for (var w = 0; w < words.length; w++) {
-            if (words[w]) {
-              html += '<span class="pull-word" style="animation-delay:' + (wordIndex * 0.1) + 's">' + words[w] + '</span> ';
-              wordIndex++;
-            }
-          }
-          line.innerHTML = html.trim();
-          line.classList.add('pull-line');
-        }
-        continue;
-      }
-    }
-
-    // Normal case: split text into words
     var text = el.textContent;
     var words = text.split(/\s+/);
     var html = '';
@@ -545,55 +1376,28 @@ h1, h2, h3, .heading-font {
     el.innerHTML = html.trim();
   }
 
-  // 3. Scroll reveal
+  // Scroll reveal
   if ('IntersectionObserver' in window) {
-    // Words reveal
-    var wordObserver = new IntersectionObserver(function(entries) {
+    var revealObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('words-visible');
-          wordObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    var wordEls = document.querySelectorAll('.words-pull-up');
-    for (var i = 0; i < wordEls.length; i++) {
-      wordObserver.observe(wordEls[i]);
-    }
-
-    // Fade up reveal
-    var fadeObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          var el = entry.target;
-          var delay = el.getAttribute('data-delay');
-          if (delay) {
-            el.style.animationDelay = delay + 's';
-          }
-          el.classList.add('is-visible');
-          fadeObserver.unobserve(el);
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.15 });
 
-    var fadeEls = document.querySelectorAll('.fade-up-reveal');
-    for (var i = 0; i < fadeEls.length; i++) {
-      fadeObserver.observe(fadeEls[i]);
+    var revealEls = document.querySelectorAll('.reveal, .words-pull-up');
+    for (var i = 0; i < revealEls.length; i++) {
+      revealObserver.observe(revealEls[i]);
     }
   } else {
-    // Fallback: reveal everything immediately
-    var wordEls = document.querySelectorAll('.words-pull-up');
-    for (var i = 0; i < wordEls.length; i++) {
-      wordEls[i].classList.add('words-visible');
-    }
-    var fadeEls = document.querySelectorAll('.fade-up-reveal');
-    for (var i = 0; i < fadeEls.length; i++) {
-      fadeEls[i].classList.add('is-visible');
+    var revealEls = document.querySelectorAll('.reveal, .words-pull-up');
+    for (var i = 0; i < revealEls.length; i++) {
+      revealEls[i].classList.add('is-visible');
     }
   }
 })();
 </script>
-
 </body>
 </html>
