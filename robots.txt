@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://nighttoxic2.github.io/amiruddin-portfolio/sitemap.xml
